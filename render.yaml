@@ -20,6 +20,7 @@ services:
       - key: JWT_EXPIRES_IN
         value: 1d
 
+
   - type: web
     name: minierp-frontend
     env: static
