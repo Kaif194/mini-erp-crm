@@ -5,7 +5,7 @@ services:
     plan: free
     rootDir: backend
     buildCommand: npm install --include=dev && npm run build
-    startCommand: npm start
+    startCommand: npx prisma db push && npm run prisma:seed && npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -19,7 +19,8 @@ services:
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 1d
-
+      - key: CORS_ORIGIN
+        value: https://minierp-frontend.onrender.com
 
   - type: web
     name: minierp-frontend
@@ -29,7 +30,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://minierp-backend.onrender.com/api/v1
+        value: https://minierp-backend-w2xc.onrender.com/api/v1
     routes:
       - type: rewrite
         source: /*
