@@ -15,6 +15,10 @@ services:
         fromDatabase:
           name: minierp-db
           property: connectionString
+      - key: DIRECT_URL
+        fromDatabase:
+          name: minierp-db
+          property: connectionString
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_EXPIRES_IN
