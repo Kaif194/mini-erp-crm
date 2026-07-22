@@ -1,0 +1,25 @@
+import { Router } from 'express';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerDocument } from '../config/swagger';
+
+import authRoutes from './auth.routes';
+import customerRoutes from './customer.routes';
+import productRoutes from './product.routes';
+import stockRoutes from './stock.routes';
+import challanRoutes from './challan.routes';
+import dashboardRoutes from './dashboard.routes';
+
+const router = Router();
+
+// Swagger Documentation Route
+router.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// Module API Routes
+router.use('/auth', authRoutes);
+router.use('/customers', customerRoutes);
+router.use('/products', productRoutes);
+router.use('/stock-movements', stockRoutes);
+router.use('/challans', challanRoutes);
+router.use('/dashboard', dashboardRoutes);
+
+export default router;
