@@ -27,13 +27,12 @@ export const LoginPage: React.FC = () => {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: 'admin@minierp.com',
-      password: 'Password123!',
+      email: '',
+      password: '',
     },
   });
 
@@ -48,11 +47,6 @@ export const LoginPage: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleQuickRole = (email: string) => {
-    setValue('email', email);
-    setValue('password', 'Password123!');
   };
 
   return (
@@ -100,47 +94,6 @@ export const LoginPage: React.FC = () => {
             Sign In to Portal
           </Button>
         </form>
-
-        {/* Demo Quick-Login Buttons */}
-        <div className="mt-8 pt-6 border-t border-slate-700/80">
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center mb-3">
-            Quick Test Accounts (Click to Fill)
-          </p>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            <button
-              type="button"
-              onClick={() => handleQuickRole('admin@minierp.com')}
-              className="p-2 bg-slate-900/60 hover:bg-slate-700 border border-slate-700 rounded-lg text-slate-300 transition text-left"
-            >
-              <span className="font-bold text-blue-400 block">Admin</span>
-              <span className="text-[10px] text-slate-400">admin@minierp.com</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickRole('sales1@minierp.com')}
-              className="p-2 bg-slate-900/60 hover:bg-slate-700 border border-slate-700 rounded-lg text-slate-300 transition text-left"
-            >
-              <span className="font-bold text-emerald-400 block">Sales</span>
-              <span className="text-[10px] text-slate-400">sales1@minierp.com</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickRole('warehouse1@minierp.com')}
-              className="p-2 bg-slate-900/60 hover:bg-slate-700 border border-slate-700 rounded-lg text-slate-300 transition text-left"
-            >
-              <span className="font-bold text-amber-400 block">Warehouse</span>
-              <span className="text-[10px] text-slate-400">warehouse1@minierp.com</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickRole('accounts1@minierp.com')}
-              className="p-2 bg-slate-900/60 hover:bg-slate-700 border border-slate-700 rounded-lg text-slate-300 transition text-left"
-            >
-              <span className="font-bold text-purple-400 block">Accounts</span>
-              <span className="text-[10px] text-slate-400">accounts1@minierp.com</span>
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
