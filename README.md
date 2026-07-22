@@ -4,6 +4,14 @@ Production-ready Full Stack Enterprise Monorepo designed for wholesale and distr
 
 ---
 
+## 🌐 Live Production Application Links
+
+- 💻 **Live Frontend Portal**: [https://minierp-frontend.onrender.com](https://minierp-frontend.onrender.com)
+- ⚙️ **Live Backend API**: [https://minierp-backend-w2xc.onrender.com/api/v1](https://minierp-backend-w2xc.onrender.com/api/v1)
+- 📚 **Live Swagger OpenAPI Docs**: [https://minierp-backend-w2xc.onrender.com/api/v1/docs](https://minierp-backend-w2xc.onrender.com/api/v1/docs)
+
+---
+
 ## 🏗 Architecture Diagram
 
 ```mermaid
