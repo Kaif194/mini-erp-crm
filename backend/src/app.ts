@@ -36,6 +36,19 @@ app.use((req, _res, next) => {
   next();
 });
 
+// Root Welcome Endpoint
+app.get('/', (_req: Request, res: Response) => {
+  res.status(200).json({
+    message: 'Mini ERP + CRM REST API Server is running',
+    version: '1.0.0',
+    status: 'OK',
+    endpoints: {
+      health: '/health',
+      api: '/api/v1',
+    },
+  });
+});
+
 // Health check endpoint
 app.get('/health', (_req: Request, res: Response) => {
   res.status(200).json({
