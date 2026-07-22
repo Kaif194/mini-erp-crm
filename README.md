@@ -55,7 +55,7 @@ graph TD
 
 ---
 
-## 🛠 Local Setup Instructions
+## 🛠 Setup & Deployment Instructions
 
 ### Prerequisites
 - Node.js >= v20
@@ -107,6 +107,30 @@ npm install
 # Start Vite Development Server
 npm run dev
 ```
+
+---
+
+### 3. Render Cloud Deployment (Production Infrastructure)
+
+This repository includes a pre-configured [render.yaml](file:///c:/Users/user/.gemini/antigravity-ide/scratch/mini-erp-crm/render.yaml) Infrastructure-as-Code Blueprint for one-click deployment to Render's free tier.
+
+1. **Push repository to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Prepare for Render cloud deployment"
+   git push origin main
+   ```
+
+2. **Deploy via Render Blueprint**:
+   - Go to [Render Dashboard](https://dashboard.render.com).
+   - Click **New +** → **Blueprint**.
+   - Connect your GitHub repository (`mini-erp-crm`).
+   - Click **Apply**.
+
+Render automatically provisions and deploys:
+- 🗄️ **PostgreSQL Database** (`minierp-db`): Free Tier database instance.
+- ⚙️ **Backend Web Service** (`minierp-backend`): Automatic Prisma schema push, data seeding, and Express REST API server execution.
+- 💻 **Frontend Static Site** (`minierp-frontend`): Built Vite React app served globally with automatic rewrite rules for single-page routing (`SPA`).
 
 ---
 
